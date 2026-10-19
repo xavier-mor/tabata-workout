@@ -1,0 +1,25 @@
+{
+  "name": "tabata-timer",
+  "private": false,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Hand-drawn Tabata interval timer — pick exercises by body part, set work/rest/rounds, animated stick-figure cues.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "serve -s dist -l ${PORT:-3000}"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "serve": "^14.2.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.11"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
