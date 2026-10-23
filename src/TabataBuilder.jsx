@@ -124,6 +124,44 @@ const POSES = {
     { head: [24,58,7], lines: ["M32 62 L76 70","M32 62 L30 82","M76 70 L88 80","M10 84 L92 84"] },
   ]},
 
+  /* park — bars and bench */
+  deadhang: { beat: 3.2, frames: [
+    { head: [50,33,8], lines: ["M18 12 L82 12","M50 42 L42 12","M50 42 L58 12","M50 42 L50 66","M50 66 L47 88","M50 66 L53 88"] },
+    { head: [50,34,8], lines: ["M18 12 L82 12","M50 43 L42 12","M50 43 L58 12","M50 43 L50 67","M50 67 L47 89","M50 67 L53 89"] },
+  ]},
+  scappull: { beat: 1.6, frames: [
+    { head: [50,34,8], lines: ["M18 12 L82 12","M50 43 L42 12","M50 43 L58 12","M50 43 L50 67","M50 67 L47 89","M50 67 L53 89"] },
+    { head: [50,28,8], lines: ["M18 12 L82 12","M50 37 L43 12","M50 37 L57 12","M50 37 L50 61","M50 61 L47 83","M50 61 L53 83"] },
+  ]},
+  row: { beat: 1.6, frames: [
+    { head: [31,53,7], lines: ["M28 38 L52 38","M40 58 L88 84","M40 58 L40 38","M8 86 L94 86"] },
+    { head: [32,40,7], lines: ["M28 38 L52 38","M40 46 L88 84","M41 47 L49 41 L40 38","M8 86 L94 86"] },
+  ]},
+  inclinepush: { beat: 1.5, frames: [
+    { head: [19,35,7], lines: ["M14 60 L32 60","M23 60 L23 86","M26 40 L88 84","M26 40 L24 60","M8 86 L94 86"] },
+    { head: [24,49,7], lines: ["M14 60 L32 60","M23 60 L23 86","M32 55 L88 84","M32 55 L40 64 L24 60","M8 86 L94 86"] },
+  ]},
+  dipsupport: { beat: 3.2, frames: [
+    { head: [52,19,7], lines: ["M24 50 L80 50","M30 50 L30 90","M76 50 L76 90","M54 28 L52 54","M54 30 L56 50","M52 54 L58 68 L48 76"] },
+    { head: [52,20,7], lines: ["M24 50 L80 50","M30 50 L30 90","M76 50 L76 90","M54 29 L52 55","M54 31 L56 50","M52 55 L58 69 L48 77"] },
+  ]},
+  bardip: { beat: 1.8, frames: [
+    { head: [52,19,7], lines: ["M24 50 L80 50","M30 50 L30 90","M76 50 L76 90","M54 28 L52 54","M54 30 L56 50","M52 54 L58 68 L48 76"] },
+    { head: [43,31,7], lines: ["M24 50 L80 50","M30 50 L30 90","M76 50 L76 90","M46 40 L48 64","M46 42 L60 42 L56 50","M48 64 L56 76 L46 84"] },
+  ]},
+  kneeraise: { beat: 1.8, frames: [
+    { head: [50,33,8], lines: ["M18 12 L82 12","M50 42 L42 12","M50 42 L58 12","M50 42 L50 66","M50 66 L47 88","M50 66 L53 88"] },
+    { head: [50,33,8], lines: ["M18 12 L82 12","M50 42 L42 12","M50 42 L58 12","M50 42 L50 64","M50 64 L68 61 L68 82","M50 64 L66 63 L65 83"] },
+  ]},
+  benchsitup: { beat: 1.8, frames: [
+    { head: [21,74,7], lines: ["M14 80 L84 60","M20 78 L20 88","M76 62 L76 88","M8 88 L94 88","M54 65 L30 72","M54 65 L68 48 L82 56","M32 71 L42 66"] },
+    { head: [45,31,7], lines: ["M14 80 L84 60","M20 78 L20 88","M76 62 L76 88","M8 88 L94 88","M54 65 L48 40","M54 65 L68 48 L82 56","M48 44 L58 50"] },
+  ]},
+  splitsquat: { beat: 1.8, frames: [
+    { head: [44,14,8], lines: ["M74 64 L90 64","M82 64 L82 88","M10 88 L94 88","M44 22 L46 48","M46 48 L42 66 L40 86","M46 48 L62 62 L78 62","M45 28 L40 46"] },
+    { head: [42,26,8], lines: ["M74 64 L90 64","M82 64 L82 88","M10 88 L94 88","M42 34 L46 60","M46 60 L32 64 L34 86","M46 60 L58 80 L78 62","M43 40 L38 58"] },
+  ]},
+
   /* bookends */
   warmup: { beat: 1.4, frames: [
     { head: [50,28,8], lines: ["M50 36 L50 60","M50 60 L40 84","M50 60 L60 84","M50 42 L30 26","M50 42 L70 26"] },
@@ -134,6 +172,7 @@ const POSES = {
     { head: [27,67,7.5], lines: ["M52 48 L46 84","M52 48 L58 84","M52 48 L34 62","M34 62 L32 82"] },
   ]},
 };
+POSES.negpullup = { ...POSES.pullup, frames: [POSES.pullup.frames[1], POSES.pullup.frames[0]], beat: 3.2 };
 
 const LIBRARY = [
   { key:"squat",      group:"Legs",       name:"Bodyweight squat",  cue:"Sit back like there's a chair behind you" },
@@ -163,9 +202,31 @@ const LIBRARY = [
   { key:"steptouch",  group:"Cardio",     name:"Side step-touch",   cue:"Wide steps, arms join in" },
   { key:"fastfeet",   group:"Cardio",     name:"Fast feet",         cue:"Tiny quick steps, stay on the balls of your feet" },
   { key:"burpee",     group:"Cardio",     name:"Burpee",            cue:"Step back and step up if the jump is too much" },
+
+  { key:"deadhang",   group:"Park",       name:"Dead hang",         cue:"High bar, full grip, relax and breathe — feet down if you need" },
+  { key:"scappull",   group:"Park",       name:"Scapular pulls",    cue:"Arms stay straight, pull the shoulders down away from the ears" },
+  { key:"row",        group:"Park",       name:"Australian row",    cue:"Chest-height bar, body straight, pull chest to the bar. Walk feet back to make it harder" },
+  { key:"inclinepush",group:"Park",       name:"Incline push-up",   cue:"Hands on the low bar, body in one line, chest to the bar" },
+  { key:"dipsupport", group:"Park",       name:"Dip support hold",  cue:"Parallel bars, arms locked, shoulders pushed down" },
+  { key:"bardip",     group:"Park",       name:"Bar dip",           cue:"Lower slow to elbows at 90°, push back up. Jump to the top and just lower if needed" },
+  { key:"negpullup",  group:"Park",       name:"Negative pull-up",  cue:"Jump or climb to chin over bar, lower for 3–5 seconds" },
+  { key:"kneeraise",  group:"Park",       name:"Hanging knee raise",cue:"Knees to hip height, no swinging" },
+  { key:"benchsitup", group:"Park",       name:"Bench sit-up",      cue:"Feet hooked on the curved bench, roll up slow, lower slower" },
+  { key:"splitsquat", group:"Park",       name:"Bulgarian split squat", cue:"Back foot on the low bar, drop the back knee. Switch legs halfway" },
 ];
-const GROUPS = ["Legs", "Upper body", "Core", "Cardio"];
+const GROUPS = ["Legs", "Upper body", "Core", "Cardio", "Park"];
 const byKey = (k) => LIBRARY.find((e) => e.key === k);
+
+/* beginner plans for an outdoor bar park — rotate Pull, Push, Legs & core
+   on three days a week, try the test day after about four weeks */
+const PLANS = [
+  { name:"Park intro",      note:"Day 1 · full body",  keys:["row","inclinepush","squat","benchsitup"],              work:20, rest:20, rounds:6 },
+  { name:"Pull day",        note:"Bars · back & grip", keys:["deadhang","scappull","row","kneeraise"],             work:20, rest:20, rounds:6 },
+  { name:"Push day",        note:"Bars · chest & arms",keys:["inclinepush","dipsupport","kneepushup","plank"],     work:20, rest:20, rounds:6 },
+  { name:"Legs & core",     note:"Low bar & bench",    keys:["splitsquat","squat","bridge","benchsitup","kneeraise"], work:30, rest:30, rounds:4 },
+  { name:"Week 4 test",     note:"Classic 20 / 10",    keys:["row","negpullup","bardip","splitsquat","kneeraise"], work:20, rest:10, rounds:8 },
+];
+const planLen = (p) => 240 + p.keys.length * p.rounds * (p.work + p.rest) + (p.keys.length - 1) * 60;
 
 const WARMUP = { key:"warmup", name:"Loosen up", cue:"Big arm circles, then march on the spot" };
 const COOL   = { key:"cooldown", name:"Fold and breathe", cue:"Let your neck go heavy, knees soft" };
@@ -414,6 +475,11 @@ export default function TabataBuilder() {
   };
   const toggle = () => { if (finished) return reset(); if (!running) chime("tick"); setRunning((r) => !r); };
 
+  function loadPlan(p) {
+    if (started) return;
+    setPicked(p.keys); setWork(p.work); setRest(p.rest); setRounds(p.rounds);
+  }
+
   function togglePick(k) {
     if (started) return;
     setPicked((p) => {
@@ -576,6 +642,41 @@ export default function TabataBuilder() {
             Reset
           </button>
         </div>
+
+        {/* ---- beginner plans ---- */}
+        {!started && (
+          <>
+            <div style={{ marginTop:32, display:"flex", justifyContent:"space-between", alignItems:"baseline",
+                          fontSize:11, ...caps, opacity:0.75 }}>
+              <span>Beginner plans · bar park</span>
+              <span>Tap to load</span>
+            </div>
+            <div style={{ marginTop:9, display:"grid", gap:6 }}>
+              {PLANS.map((p) => {
+                const on = p.work === work && p.rest === rest && p.rounds === rounds
+                  && p.keys.join() === picked.join();
+                return (
+                  <button key={p.name} className="btn" onClick={() => loadPlan(p)}
+                    style={{ display:"flex", alignItems:"center", gap:10, textAlign:"left", ...body,
+                             background: on ? INK : PAPER, color: on ? PAPER : INK,
+                             border:`2px solid ${INK}`, borderRadius:14, padding:"8px 12px" }}>
+                    <span style={{ minWidth:0, flex:1 }}>
+                      <span style={{ ...display, fontSize:14, letterSpacing:"-0.01em", display:"block" }}>{p.name}</span>
+                      <span style={{ fontSize:10, ...caps, opacity:0.55 }}>
+                        {p.note} · {p.keys.length} blocks · {p.work}/{p.rest} × {p.rounds}
+                      </span>
+                    </span>
+                    <span style={{ ...display, fontSize:13, ...mono, flexShrink:0 }}>{clock(planLen(p))}</span>
+                  </button>
+                );
+              })}
+            </div>
+            <p style={{ fontSize:13, lineHeight:1.5, margin:"9px 0 0", opacity:0.75 }}>
+              Three days a week, a rest day between: Pull, Push, Legs &amp; core. Start with Park intro.
+              Can't do a move yet? Use the easier version in its cue. Try the Week 4 test after a month.
+            </p>
+          </>
+        )}
 
         {/* ---- interval settings ---- */}
         <div style={{ marginTop:32, display:"flex", justifyContent:"space-between", alignItems:"baseline",

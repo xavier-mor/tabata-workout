@@ -4,7 +4,8 @@ A hand-drawn Tabata interval timer. Pick exercises by body part, set your own wo
 
 ![icon](public/icon-192.png)
 
-- **24 exercises** across Legs, Upper body, Core and Cardio, each drawn as a two-frame stick-figure loop on a boiling ink line.
+- **34 exercises** across Legs, Upper body, Core, Cardio and Park (bar-park moves: rows, dips, hangs, knee raises, bench sit-ups), each drawn as a two-frame stick-figure loop on a boiling ink line.
+- **Beginner plans** for an outdoor bar park — Pull, Push, Legs & core, plus a week-4 test — one tap to load.
 - **Proper Tabata structure** — a block is one exercise held for every round. Classic is 20s on / 10s off × 8 = 4:00.
 - **Adjustable intervals** — work 10–60s, rest 5–60s, 4–12 rounds, up to 6 blocks.
 - **Screen Wake Lock** so the phone doesn't sleep mid-workout.
